@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shreyass ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Trebuchet MS", sans-serif;
+        background: linear-gradient(135deg, #fff0f5, #ffe4ec, #fff7f0);
+        overflow: hidden;
+        color: #5a3545;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 430px;
+        padding: 35px 25px;
+        text-align: center;
+        background: rgba(255,255,255,0.8);
+        border-radius: 30px;
+        box-shadow: 0 15px 40px rgba(150, 80, 100, 0.18);
+        position: relative;
+        z-index: 2;
+    }
+
+    .teddy {
+        font-size: 65px;
+        margin-bottom: 10px;
+        animation: bounce 2s infinite;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 10px 0;
+    }
+
+    .question {
+        font-size: 22px;
+        margin: 25px 0;
+        font-weight: bold;
+    }
+
+    .subtext {
+        font-size: 15px;
+        opacity: 0.75;
+        margin-bottom: 25px;
+    }
+
+    .buttons {
+        position: relative;
+        height: 80px;
+    }
+
+    button {
+        border: none;
+        padding: 13px 28px;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    #yes {
+        background: #ff6f91;
+        color: white;
+        box-shadow: 0 6px 15px rgba(255,111,145,0.3);
+    }
+
+    #yes:hover {
+        transform: scale(1.08);
+    }
+
+    #no {
+        background: #f4dce4;
+        color: #7a5361;
+        position: absolute;
+        margin-left: 10px;
+    }
+
+    #message {
+        display: none;
+        font-size: 17px;
+        line-height: 1.7;
+        animation: appear 1s ease;
+    }
+
+    .heart {
+        position: absolute;
+        font-size: 20px;
+        animation: float 7s linear infinite;
+        opacity: 0.7;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    @keyframes float {
+        from {
+            transform: translateY(100vh) rotate(0deg);
+        }
+        to {
+            transform: translateY(-120vh) rotate(360deg);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+<div class="heart" style="left:25%; animation-delay:2s;">💗</div>
+<div class="heart" style="left:50%; animation-delay:4s;">🌻</div>
+<div class="heart" style="left:75%; animation-delay:1s;">💕</div>
+<div class="heart" style="left:90%; animation-delay:3s;">❤️</div>
+
+<div class="card">
+
+    <div id="proposal">
+
+        <div class="teddy">🧸</div>
+
+        <h1>Hey Shreyass... 🥹❤️</h1>
+
+        <p class="subtext">
+            I have something I've been wanting to ask you...
+        </p>
+
+        <div class="question">
+            Will you be my boyfriend? 🌻❤️
+        </div>
+
+        <div class="buttons">
+            <button id="yes">YES 🥹❤️</button>
+            <button id="no">NO 🙈</button>
+        </div>
+
+    </div>
+
+    <div id="message">
+
+        <div class="teddy">🧸🌻</div>
+
+        <h1>Okayyy... you said YES 🥹❤️</h1>
+
+        <p>
+            I don't know exactly when it happened,
+            but somewhere along the way, you became
+            someone really special to me. ❤️
+        </p>
+
+        <p>
+            I love how comfortable I feel with you,
+            how you understand me, and how even the
+            simplest conversations with you feel special.
+        </p>
+
+        <p>
+            Sooo... here's to us, Shreyass. 🥹🌻
+            <br>
+            I'm really happy it's you. ❤️
+        </p>
+
+        <h2>Officially us? 🥹❤️</h2>
+
+    </div>
+
+</div>
+
+<script>
+
+const noButton = document.getElementById("no");
+const yesButton = document.getElementById("yes");
+const proposal = document.getElementById("proposal");
+const message = document.getElementById("message");
+
+function moveNoButton() {
+
+    const card = document.querySelector(".card");
+    const maxX = card.clientWidth - noButton.offsetWidth - 20;
+    const maxY = 60;
+
+    const randomX = Math.random() * maxX - 10;
+    const randomY = Math.random() * maxY - 20;
+
+    noButton.style.left = randomX + "px";
+    noButton.style.top = randomY + "px";
+}
+
+noButton.addEventListener("mouseenter", moveNoButton);
+noButton.addEventListener("touchstart", function(event) {
+    event.preventDefault();
+    moveNoButton();
+});
+
+yesButton.addEventListener("click", function() {
+
+    proposal.style.display = "none";
+    message.style.display = "block";
+
+    for(let i = 0; i < 25; i++) {
+        const heart = document.createElement("div");
+
+        heart.innerHTML = ["❤️","💗","💕","🧸","🌻"][Math.floor(Math.random()*5)];
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-30px";
+        heart.style.fontSize = (15 + Math.random()*25) + "px";
+        heart.style.animation = "float 4s linear forwards";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 4000);
+    }
+});
+
+</script>
+
+</body>
+</html>
